@@ -5,3 +5,4 @@ Some of the below concepts has been discussed -->
   2) Encapsulation
   3) Inheritence
   4) Abstruct Class
+In #main.py# file , you will get most of the things .
