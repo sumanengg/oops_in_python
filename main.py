@@ -80,7 +80,44 @@ class Cat(Animal):
         return f"{self.name} plays with {self.toy}."
     
 cat = Cat("Whiskers", "Siamese", "ball")
-print(cat.play())  # Output: Meow!
-print(isinstance(cat, Animal))  # Output: True
-print(Cat.__mro__)
+# print(cat.play())  # Output: Meow!
+# print(isinstance(cat, Animal))  # Output: True
+# print(Cat.__mro__)
+
+# Abstract Class
+# It's a class that cannot be instantiated and is meant to be subclassed.
+"""
+It's a blueprint for other classes.
+1. It's cannot be instantiated directly.
+2. Subclasses must implement abstract methods.
+3. It can have concrete methods (methods with implementation).
+
+"""
+from abc import ABC, abstractmethod
+class shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+    @abstractmethod
+    def perimeter(self):
+        pass
+    def info(self):
+        return "This is a shape class."
     
+class Circle(shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius ** 2
+
+    def perimeter(self):
+        return 2 * 3.14 * self.radius
+    def info(self):
+        return "This is a circle class."
+    
+
+circle = Circle(5)
+print(circle.area())  # Output: 78.5
+# shape = shape()  # This will raise an error because shape is an abstract class
